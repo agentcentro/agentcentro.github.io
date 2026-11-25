@@ -190,9 +190,10 @@ body.menu-open{overflow:hidden}
 .contract-page article h3 { margin: 1.75rem 0 .5rem; }
 .contract-page article p { color: var(--muted); line-height: 1.7; }
 
-.join-dialog{margin:auto;width:min(420px,calc(100% - 32px));max-height:90vh;overflow:auto;padding:24px;color:#f5efff;background:#17121e;border:1px solid #463651;border-radius:18px;color-scheme:dark}
-.join-dialog::backdrop{background:#08060bda}
-.join-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.join-page{min-height:100vh;display:grid;place-items:center;padding:16px}
+.join-dialog{width:min(420px,100%);padding:24px;color:#f5efff;background:#17121e;border:1px solid #463651;border-radius:18px;color-scheme:dark}
+.join-back{display:inline-block;margin-bottom:20px;color:#d6c1ff}
+.join-dialog h1{font-size:32px;font-weight:800;margin-bottom:20px}
 .join-dialog form:not([hidden]){display:grid;gap:12px}
 .join-dialog label{font-size:15px;line-height:1.5}
 .join-dialog input:not([type=checkbox]),.join-dialog select{width:100%;padding:11px 12px;border:1px solid #685576;border-radius:8px;background:#211a2a;color:inherit;font:inherit}

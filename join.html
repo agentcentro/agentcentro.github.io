@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Join the clan | Prestige</title>
+  <link rel="icon" href="assets/prestige-tab-32.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="join-page">
+  <main class="join-dialog">
+    <a href="index.html" class="join-back">Back to Prestige</a>
+    <h1 id="join-title" tabindex="-1">Join the clan</h1>
+    <noscript>Enable JavaScript to complete the verification question.</noscript>
+    <form id="join-check">
+      <label class="robot-check"><input type="checkbox" required> I'm not a robot</label>
+      <label for="check-answer" id="check-question">Solve the sum</label>
+      <input id="check-answer" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required>
+      <button class="button primary" type="submit">Open application</button>
+    </form>
+    <form id="join-application" hidden>
+      <label for="roblox-name">What's your Roblox username?</label>
+      <input id="roblox-name" required pattern=".*\S.*" maxlength="30">
+      <label for="rivals-level">How experienced are you in Roblox Rivals?</label>
+      <select id="rivals-level" required>
+        <option value="" disabled selected>Choose your experience level</option>
+        <option>Unexperienced</option>
+        <option>Average</option>
+        <option>Experienced</option>
+        <option>Veteran</option>
+      </select>
+      <button class="button primary" type="submit">Download application</button>
+    </form>
+  </main>
+  <script src="join.js"></script>
+</body>
+</html>
