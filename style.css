@@ -174,3 +174,18 @@ body.menu-open{overflow:hidden}
 .site-header .nav-inner{gap:10px}}
 .footer-grid{grid-template-columns:2fr 1fr 1fr}
 @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:span 2}}
+.contract-page {
+  max-width: 54rem;
+  margin: auto;
+  padding: 2rem 1.25rem 5rem;
+}
+.contract-page h1 {
+  margin: 2rem 0 1.5rem;
+  font-size: clamp(2rem, 6vw, 3.75rem);
+}
+.contract-page figure { margin: 0 0 3rem; }
+.contract-page figure img { display: block; width: 100%; border-radius: 12px; }
+.contract-page figcaption { margin-top: .75rem; color: var(--muted); font-size: .875rem; }
+.contract-page article { max-width: 68ch; }
+.contract-page article h3 { margin: 1.75rem 0 .5rem; }
+.contract-page article p { color: var(--muted); line-height: 1.7; }
