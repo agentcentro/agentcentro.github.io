@@ -1,1 +1,74 @@
-Hello, world.
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Prestige — Roblox clan." data-copy-content="page.description">
+  <meta name="theme-color" content="#05040a">
+  <title data-copy="page.title">Prestige</title>
+  <link rel="icon" href="assets/prestige-hat.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-haspopup="dialog" aria-controls="site-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg>
+      </button>
+      <a class="brand" href="#home" aria-label="Prestige home"><img src="assets/prestige-hat.png" alt=""><span data-copy="header.name">Prestige</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#features" data-copy="navigation.clan">The clan</a>
+      </nav>
+      <div class="nav-actions"><button class="button primary" type="button" data-copy="header.joinButton">Join the clan</button></div>
+    </div>
+  </header>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="profile-ring"><img src="assets/prestige-hat.png" alt="Prestige icon"></div>
+        <span class="hero-badge"><span aria-hidden="true">✳</span><span data-copy="hero.badge">A ROBLOX COMMUNITY</span></span>
+        <h1 id="hero-title"><span data-copy="hero.name">Prestige</span></h1>
+        <p data-copy="hero.bio"></p>
+        <div class="hero-actions">
+          <button class="button primary large" type="button" data-copy="hero.joinButton">Join the clan</button>
+          <a class="button secondary large" href="#features" data-copy="hero.aboutButton">About the clan</a>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT THE CLAN -->
+    <section class="section-wrap" id="features" aria-labelledby="features-title">
+      <div class="section-heading">
+        <span class="eyebrow" data-copy="about.label">ABOUT PRESTIGE</span>
+        <h2 id="features-title" data-copy="about.title">A bit about us</h2>
+        <p data-copy="about.description">We play Roblox and hang out here between games.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home"><span data-copy="footer.name">Prestige</span><span class="brand-period">.</span></a>
+        <p data-copy="footer.bio">A Roblox clan.</p>
+      </div>
+      <div><h3 data-copy="footer.clanLabel">PRESTIGE</h3><a href="#features" data-copy="footer.clanLink">The clan</a><button type="button" data-copy="footer.joinButton">Join the clan</button></div>
+      <div><h3 data-copy="footer.exploreLabel">EXPLORE</h3><a href="#home" data-copy="footer.topLink">Back to top</a></div>
+    </div>
+    <div class="footer-bottom"><span data-copy="footer.copyright">Prestige · Roblox clan</span><span data-copy="footer.disclaimer">Not affiliated with Roblox Corporation.</span></div>
+  </footer>
+  <dialog class="site-menu" id="site-menu" aria-labelledby="menu-title">
+    <div class="menu-heading"><strong id="menu-title"><span data-copy="menu.name">Prestige</span><span>.</span></strong><button class="menu-close" type="button" aria-label="Close navigation">×</button></div>
+    <p class="menu-caption" data-copy="menu.caption">PRESTIGE ROBLOX CLAN</p>
+    <nav aria-label="More navigation"><a href="#home" data-copy="menu.links.home">Home</a><a href="#features" data-copy="menu.links.clan">The clan</a></nav>
+    <button class="button menu-join" type="button" data-copy="menu.joinButton">Join the clan</button>
+    <span class="menu-note" data-copy="menu.note">A Roblox clan.</span>
+  </dialog>
+  <script src="content.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
