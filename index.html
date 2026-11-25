@@ -69,6 +69,31 @@
     <button class="button menu-join" type="button" data-copy="menu.joinButton">Join the clan</button>
     <span class="menu-note" data-copy="menu.note">A Roblox clan.</span>
   </dialog>
+  <dialog class="join-dialog" id="join-dialog" aria-labelledby="join-title">
+    <div class="join-heading">
+      <h2 id="join-title">Join the clan</h2>
+      <button class="menu-close" type="button" aria-label="Close clan application">×</button>
+    </div>
+    <form id="join-check">
+      <label class="robot-check"><input type="checkbox" required> I'm not a robot</label>
+      <label for="check-answer" id="check-question">Solve the sum</label>
+      <input id="check-answer" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required>
+      <button class="button primary" type="submit">Open application</button>
+    </form>
+    <form id="join-application" hidden>
+      <label for="roblox-name">What's your Roblox username?</label>
+      <input id="roblox-name" required pattern=".*\S.*" maxlength="30">
+      <label for="rivals-level">How experienced are you in Roblox Rivals?</label>
+      <select id="rivals-level" required>
+        <option value="" disabled selected>Choose your experience level</option>
+        <option>Unexperienced</option>
+        <option>Average</option>
+        <option>Experienced</option>
+        <option>Veteran</option>
+      </select>
+      <button class="button primary" type="submit">Download application</button>
+    </form>
+  </dialog>
   <script src="content.js"></script>
   <script src="script.js" defer></script>
 </body>

@@ -60,3 +60,56 @@ if (siteMenu && menuToggle) {
     if (event.clientX > bounds.right || event.clientY > bounds.bottom) closeMenu();
   });
 }
+
+const joinDialog = document.querySelector('#join-dialog');
+const joinTitle = document.querySelector('#join-title');
+const joinCheck = document.querySelector('#join-check');
+const application = document.querySelector('#join-application');
+const answer = document.querySelector('#check-answer');
+let expectedSum;
+
+document.querySelectorAll('button[data-copy$=".joinButton"]').forEach(button => {
+  button.setAttribute('aria-haspopup', 'dialog');
+  button.setAttribute('aria-controls', 'join-dialog');
+  button.addEventListener('click', () => {
+    if (siteMenu.open) siteMenu.close();
+    joinCheck.reset();
+    answer.setCustomValidity('');
+    const left = 1 + Math.floor(Math.random() * 9);
+    const right = 1 + Math.floor(Math.random() * 9);
+    expectedSum = left + right;
+    document.querySelector('#check-question').textContent = `What is ${left} + ${right}?`;
+    joinTitle.textContent = 'Join the clan';
+    joinCheck.hidden = false;
+    application.hidden = true;
+    joinDialog.showModal();
+    joinCheck.querySelector('input').focus();
+  });
+});
+
+joinDialog.querySelector('.menu-close').addEventListener('click', () => joinDialog.close());
+answer.addEventListener('input', () => answer.setCustomValidity(''));
+joinCheck.addEventListener('submit', event => {
+  event.preventDefault();
+  if (Number(answer.value) !== expectedSum) {
+    answer.setCustomValidity('Check the sum and try again.');
+    answer.reportValidity();
+    return;
+  }
+  joinCheck.hidden = true;
+  application.hidden = false;
+  joinTitle.textContent = 'Clan application';
+  document.querySelector('#roblox-name').focus();
+});
+
+application.addEventListener('submit', event => {
+  event.preventDefault();
+  const username = document.querySelector('#roblox-name').value.trim();
+  const level = document.querySelector('#rivals-level').value;
+  const contents = `Prestige clan application\nRoblox username: ${username}\nRoblox Rivals experience: ${level}\n`;
+  const link = document.createElement('a');
+  link.download = 'prestige-clan-application.txt';
+  link.href = URL.createObjectURL(new Blob([contents], { type: 'text/plain;charset=utf-8' }));
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+});
