@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Join the clan | Prestige</title>
   <link rel="icon" href="assets/prestige-tab-32.png">
-  <meta name="theme-color" content="#05040a">
+  <meta name="theme-color" content="#030408">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,33 +19,44 @@
     </div>
   </header>
   <main class="join-dialog" aria-labelledby="join-title">
-    <h1 id="join-title" tabindex="-1">Join the clan</h1>
-    <noscript>Enable JavaScript to complete the verification question.</noscript>
-    <form id="join-check">
-      <label class="robot-check"><input type="checkbox" required> I'm not a robot</label>
-      <label for="check-answer" id="check-question">Solve the sum</label>
-      <input id="check-answer" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required>
-      <div class="join-actions">
-        <button class="button primary large" type="submit">Open application</button>
-        <a class="button secondary large" href="index.html">Back to Prestige</a>
-      </div>
-    </form>
-    <form id="join-application" hidden>
-      <label for="roblox-name">What's your Roblox username?</label>
-      <input id="roblox-name" required pattern=".*\S.*" maxlength="30">
-      <label for="rivals-level">How experienced are you in Roblox Rivals?</label>
-      <select id="rivals-level" required>
-        <option value="" disabled selected>Choose your experience level</option>
-        <option>Unexperienced</option>
-        <option>Average</option>
-        <option>Experienced</option>
-        <option>Veteran</option>
-      </select>
-      <div class="join-actions">
-        <button class="button primary large" type="submit">Download application</button>
-        <a class="button secondary large" href="index.html">Back to Prestige</a>
-      </div>
-    </form>
+    <div class="join-poster" aria-hidden="true">
+      <div class="poster-orbit"></div>
+      <img src="assets/prestige-hat.png" alt="">
+      <span class="poster-wordmark">Prestige</span>
+    </div>
+    <div class="join-panel">
+      <ol class="join-progress" aria-label="Application progress">
+        <li aria-current="step">Verification</li>
+        <li>Application</li>
+      </ol>
+      <h1 id="join-title" tabindex="-1">Join the clan</h1>
+      <noscript>Enable JavaScript to complete the verification question.</noscript>
+      <form id="join-check">
+        <label class="robot-check"><input type="checkbox" required> I'm not a robot</label>
+        <label for="check-answer" id="check-question">Solve the sum</label>
+        <input id="check-answer" placeholder="Your answer" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required>
+        <div class="join-actions">
+          <button class="button primary large" type="submit">Open application</button>
+          <a class="button secondary large" href="index.html">Back to Prestige</a>
+        </div>
+      </form>
+      <form id="join-application" hidden>
+        <label for="roblox-name">What's your Roblox username?</label>
+        <input id="roblox-name" placeholder="Roblox username" required pattern=".*\S.*" maxlength="30">
+        <label for="rivals-level">How experienced are you in Roblox Rivals?</label>
+        <select id="rivals-level" required>
+          <option value="" disabled selected>Choose your experience level</option>
+          <option>Unexperienced</option>
+          <option>Average</option>
+          <option>Experienced</option>
+          <option>Veteran</option>
+        </select>
+        <div class="join-actions">
+          <button class="button primary large" type="submit">Download application</button>
+          <a class="button secondary large" href="index.html">Back to Prestige</a>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="join.js"></script>
 </body>

@@ -17,6 +17,9 @@ joinCheck.addEventListener('submit', event => {
   }
   joinCheck.hidden = true;
   application.hidden = false;
+  const steps = document.querySelectorAll('.join-progress li');
+  steps[0].removeAttribute('aria-current');
+  steps[1].setAttribute('aria-current', 'step');
   joinTitle.textContent = 'Clan application';
   document.querySelector('#roblox-name').focus();
 });
