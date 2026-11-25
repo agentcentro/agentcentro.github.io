@@ -5,18 +5,30 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Join the clan | Prestige</title>
   <link rel="icon" href="assets/prestige-tab-32.png">
+  <meta name="theme-color" content="#05040a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="join-page">
-  <main class="join-dialog">
-    <a href="index.html" class="join-back">Back to Prestige</a>
+  <div class="ambient-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Prestige home"><img src="assets/prestige-hat.png" alt="">Prestige</a>
+    </div>
+  </header>
+  <main class="join-dialog" aria-labelledby="join-title">
     <h1 id="join-title" tabindex="-1">Join the clan</h1>
     <noscript>Enable JavaScript to complete the verification question.</noscript>
     <form id="join-check">
       <label class="robot-check"><input type="checkbox" required> I'm not a robot</label>
       <label for="check-answer" id="check-question">Solve the sum</label>
       <input id="check-answer" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required>
-      <button class="button primary" type="submit">Open application</button>
+      <div class="join-actions">
+        <button class="button primary large" type="submit">Open application</button>
+        <a class="button secondary large" href="index.html">Back to Prestige</a>
+      </div>
     </form>
     <form id="join-application" hidden>
       <label for="roblox-name">What's your Roblox username?</label>
@@ -29,7 +41,10 @@
         <option>Experienced</option>
         <option>Veteran</option>
       </select>
-      <button class="button primary" type="submit">Download application</button>
+      <div class="join-actions">
+        <button class="button primary large" type="submit">Download application</button>
+        <a class="button secondary large" href="index.html">Back to Prestige</a>
+      </div>
     </form>
   </main>
   <script src="join.js"></script>

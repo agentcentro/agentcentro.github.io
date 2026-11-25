@@ -103,8 +103,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-3;pointer-events:none;ba
 .hero h1>span{background:linear-gradient(90deg,#c796ff,#a487fb,#e0c1ff,#a17ce7,#c796ff);background-size:300% 100%;background-clip:text;-webkit-text-fill-color:transparent;animation:violet-flow 9s ease-in-out infinite}
 .hero p{font-size:16px;color:#aaa2b5;line-height:1.8;max-width:600px;margin:auto}
 .hero-actions{margin-top:32px;flex-wrap:wrap;gap:12px}
-.hero .primary{background:#f5f0ff;color:#181020;border:1px solid #fff4;box-shadow:0 5px 30px #c495ff0c}
-.hero .primary:hover{background:#fff;box-shadow:0 15px 35px #c59bff20}
+:is(.hero,.join-actions) .primary{background:#f5f0ff;color:#181020;border:1px solid #fff4;box-shadow:0 5px 30px #c495ff0c}
+:is(.hero,.join-actions) .primary:hover{background:#fff;box-shadow:0 15px 35px #c59bff20}
 .secondary{background:#ffffff0b;color:#e6dfee;border:1px solid #ffffff17}
 .secondary:hover{background:linear-gradient(90deg,#a46aff19,#7045dc14);border-color:#ba96ff66}
 .large{padding:14px 21px;min-height:49px}
@@ -190,13 +190,49 @@ body.menu-open{overflow:hidden}
 .contract-page article h3 { margin: 1.75rem 0 .5rem; }
 .contract-page article p { color: var(--muted); line-height: 1.7; }
 
-.join-page{min-height:100vh;display:grid;place-items:center;padding:16px}
-.join-dialog{width:min(420px,100%);padding:24px;color:#f5efff;background:#17121e;border:1px solid #463651;border-radius:18px;color-scheme:dark}
-.join-back{display:inline-block;margin-bottom:20px;color:#d6c1ff}
-.join-dialog h1{font-size:32px;font-weight:800;margin-bottom:20px}
-.join-dialog form:not([hidden]){display:grid;gap:12px}
-.join-dialog label{font-size:15px;line-height:1.5}
-.join-dialog input:not([type=checkbox]),.join-dialog select{width:100%;padding:11px 12px;border:1px solid #685576;border-radius:8px;background:#211a2a;color:inherit;font:inherit}
-.join-dialog .robot-check{display:flex;align-items:center;gap:12px;border:1px solid #685576;border-radius:8px;padding:14px;cursor:pointer}
-.robot-check input{width:20px;height:20px;accent-color:#8656ce}
-.join-dialog .button{margin-top:6px}
+.join-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.join-page .site-header { flex-shrink: 0; }
+.join-dialog {
+  box-sizing: border-box;
+  width: min(34rem, calc(100% - 32px));
+  margin: auto;
+  padding: clamp(22px, 5vw, 42px);
+  background: linear-gradient(145deg, #20162b, #100d17 75%);
+  border: 1px solid #bc91f238;
+  border-radius: 20px;
+  color-scheme: dark;
+}
+.join-page::after { content: ''; height: 24px; flex-shrink: 0; }
+.join-page .site-header { margin-bottom: 24px; }
+.join-dialog h1 {
+  margin-bottom: 28px;
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+.join-dialog form:not([hidden]) { display: grid; gap: 10px; }
+.join-dialog label { font-size: 15px; line-height: 1.5; font-weight: 600; }
+.join-dialog input:not([type=checkbox]), .join-dialog select, .robot-check {
+  width: 100%;
+  min-width: 0;
+  min-height: 49px;
+  border: 1px solid #685576;
+  border-radius: 11px;
+  padding: 12px 14px;
+  background: #17121e;
+  color: inherit;
+  font: inherit;
+}
+.join-dialog input + label, .robot-check + label { margin-top: 12px; }
+.robot-check { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.robot-check input { width: 20px; height: 20px; margin: 0; accent-color: #8656ce; }
+.join-dialog :is(input,select):focus-visible { outline: 2px solid #bd91ff; outline-offset: 3px; }
+.join-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+@media (max-width: 520px) {
+  .join-actions { grid-template-columns: 1fr; }
+  .join-actions .button { min-height: 48px; font-size: 13px; }
+}
